@@ -1,5 +1,5 @@
 import { IActivity } from './../models/activity';
-import { action, makeAutoObservable, makeObservable, observable, runInAction } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
 import agent from '../api/agent';
 
 export default class ActivityStore {

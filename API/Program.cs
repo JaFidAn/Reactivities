@@ -6,12 +6,17 @@ using Application.Core;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
+using FluentValidation.AspNetCore;
+using API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddFluentValidation(config => 
+{
+    config.RegisterValidatorsFromAssemblyContaining<Create>();
+});
 
 // For Extensions method
 builder.Services.AddApplicationServices(builder.Configuration);
@@ -32,6 +37,7 @@ try{
     logger.LogError(ex, "An error occured during migration");
 }
 
+app.UseMiddleware<ExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
