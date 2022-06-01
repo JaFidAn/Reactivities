@@ -42,7 +42,7 @@ namespace Application.Activities
                 var attendance = activity.Attendees.FirstOrDefault(x => x.AppUser.UserName == user.UserName);
                 if(attendance != null && hostUsername == user.UserName)
                 {
-                    activity.isCancelled = !activity.isCancelled;
+                    activity.IsCancelled = !activity.IsCancelled;
                 }
                 if(attendance != null && hostUsername !=user.UserName)
                 {
