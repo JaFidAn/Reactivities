@@ -33,7 +33,10 @@ builder.Services.AddControllers(opt =>
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddIdentityServices(builder.Configuration);
 
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
 var app = builder.Build();
+
 
 
 //For Migration add this
@@ -62,6 +65,9 @@ if (app.Environment.IsDevelopment())
 //app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.UseCors("CorsPolicy");
 
 app.UseAuthentication();
@@ -74,6 +80,7 @@ app.UseEndpoints(endpoint =>
 {
     endpoint.MapControllers();
     endpoint.MapHub<ChatHub>("/chat");
+    endpoint.MapFallbackToController("Index", "Fallback");
 });
 
 app.Run();

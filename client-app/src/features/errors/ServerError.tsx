@@ -1,5 +1,5 @@
-import { observer } from "mobx-react-lite";
 import React from "react";
+import { observer } from "mobx-react-lite";
 import { Container, Header, Segment } from "semantic-ui-react";
 import { useStore } from "../../app/stores/store";
 
@@ -11,10 +11,10 @@ export default observer(function ServerError(){
         
         <Container>
             <Header as='h1' content='Server Error' />
-            <Header sub as='h5' color='red' >Test</Header>
+            <Header sub as='h5' color='red' >{commonStore.error}</Header>
             <Segment>
                 <Header as='h4' content='Stack trace' color='teal' />
-                <code style={{marginTop: '10px'}}>Salam</code>
+                <code style={{marginTop: '10px'}}>{commonStore.error}</code>
             </Segment>
             
         </Container>
