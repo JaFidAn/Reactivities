@@ -63,7 +63,8 @@ app.UseCsp(opt => opt
     .BlockAllMixedContent()
     .StyleSources(s => s.Self().CustomSources(
                                             "https://fonts.googleapis.com", 
-                                            "sha256-yChqzBduCCi4o4xdbXRXh4U/t1rP4UUUMJt+rB+ylUI="
+                                            "sha256-yChqzBduCCi4o4xdbXRXh4U/t1rP4UUUMJt+rB+ylUI=",
+                                            "sha256-r3x6D0yBZdyG8FpooR5ZxcsLuwuJ+pSQ/80YzwXS5IU="
                                             ))
     .FontSources(s => s.Self().CustomSources(
                                             "https://fonts.gstatic.com", "data:"
@@ -73,7 +74,8 @@ app.UseCsp(opt => opt
     .ImageSources(s => s.Self().CustomSources(
                                             "https://res.cloudinary.com", 
                                             "https://www.facebook.com",
-                                            "https://platform-lookaside.fbsbx.com"
+                                            "https://platform-lookaside.fbsbx.com",
+                                            "data:"
                                             ))
     .ScriptSources(s => s.Self().CustomSources(
                                             "sha256-7JP9bIEe1Ef92IdXbV/b1y4/vz2qKUJxCEWrwGZzLJY=",
