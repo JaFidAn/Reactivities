@@ -37,7 +37,9 @@ namespace API.Extensions
                             ValidateIssuerSigningKey = true,
                             IssuerSigningKey = key,
                             ValidateIssuer = false,
-                            ValidateAudience = false
+                            ValidateAudience = false,
+                            ValidateLifetime = true,
+                            ClockSkew = TimeSpan.Zero   //this will be remove default ValidateLifeTime which is give by defaul 5 minutes
                         };
                         opt.Events = new JwtBearerEvents
                         {
