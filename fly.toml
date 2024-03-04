@@ -13,6 +13,7 @@ primary_region = 'sin'
   ASPNETCORE_URLS = 'http://+:8080'
   Clodinary__ApiKey = '876977818829923'
   Clodinary__CloudName = 'dwsmhdrpb'
+  Facebook__AppId="2086112555083196"
 
 [http_service]
   internal_port = 8080
