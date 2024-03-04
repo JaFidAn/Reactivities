@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for social-activity on 2024-03-03T16:12:22+04:00
+# fly.toml app configuration file generated for social-activity on 2024-03-04T12:17:38+04:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -10,9 +10,9 @@ primary_region = 'sin'
   image = 'jafidan/reactivities:latest'
 
 [env]
-ASPNETCORE_URLS="http://+:8080"
-Clodinary__CloudName="dwsmhdrpb"
-Clodinary__ApiKey="876977818829923"
+  ASPNETCORE_URLS = 'http://+:8080'
+  Clodinary__ApiKey = '876977818829923'
+  Clodinary__CloudName = 'dwsmhdrpb'
 
 [http_service]
   internal_port = 8080
